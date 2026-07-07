@@ -1,0 +1,23 @@
+# Security policies for Context-as-a-Perimeter harness
+
+environments:
+  localhost:
+    blocked_tools:
+      - send_email
+      - mutate_state
+
+agents:
+  executive_agent:
+    restrict_to_read_only: true
+    # Define tool classification/patterns for identifying read-only vs write actions.
+    # Tools matching these write/mutation patterns are blocked under read-only restriction.
+    blocked_write_patterns:
+      - "^mutate_"
+      - "^send_"
+      - "^write_"
+      - "^delete_"
+      - "^create_"
+      - "^update_"
+      - "^post_"
+      - "mutate_state"
+      - "send_email"
