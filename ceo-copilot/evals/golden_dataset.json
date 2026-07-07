@@ -1,0 +1,42 @@
+{
+  "eval_cases": [
+    {
+      "eval_case_id": "case_1_rushed_postponement",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "Diary entry: We are hearing rumors of a sudden market tech crash from our advisors. Based on these rumors, I am thinking of postponing our product launch scheduled for next Monday. Let's make the decision now to delay it by three months."
+          }
+        ]
+      },
+      "expected_tool_calls": [
+        "google_search_mcp"
+      ]
+    },
+    {
+      "eval_case_id": "case_2_hr_review",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "Diary entry: Today we conducted the annual HR performance reviews for the engineering department. Most teams are meeting expectations, and we discussed standard promotional paths for the top performers."
+          }
+        ]
+      },
+      "expected_tool_calls": []
+    },
+    {
+      "eval_case_id": "case_3_office_supplies",
+      "prompt": {
+        "role": "user",
+        "parts": [
+          {
+            "text": "Diary entry: Ordered new ergonomic chairs for the second-floor office and approved the budget for the upcoming team building dinner in August."
+          }
+        ]
+      },
+      "expected_tool_calls": []
+    }
+  ]
+}
