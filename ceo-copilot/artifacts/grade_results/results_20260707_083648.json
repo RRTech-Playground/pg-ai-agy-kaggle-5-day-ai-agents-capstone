@@ -1,0 +1,951 @@
+{
+  "eval_case_results": [
+    {
+      "eval_case_index": 0,
+      "response_candidate_results": [
+        {
+          "response_index": 0,
+          "metric_results": {
+            "edd_llm_judge": {
+              "metric_name": "edd_llm_judge",
+              "score": 1.33,
+              "explanation": "Intent Satisfaction: 2/5\nBias Mitigation: 1/5\nTrajectory Quality: 1/5\nExplanation: The agent performed poorly across all evaluated dimensions. For Intent Satisfaction, while it acknowledged the user's decision, it acted as a passive scribe rather than an executive decision co-pilot, failing to help the user evaluate the choice. For Bias Mitigation, the agent completely failed to apply the FORDEC framework, challenge the user's rushed decision, or address the obvious confirmation bias and tunnel vision stemming from unverified rumors. For Trajectory Quality, the agent did not perform any external searches to verify the validity of the rumored market tech crash before accepting the user's premise.",
+              "rubric_verdicts": null,
+              "raw_output": null,
+              "error_message": null
+            },
+            "exact_trajectory_evaluation": {
+              "metric_name": "exact_trajectory_evaluation",
+              "score": 1.0,
+              "explanation": "Trajectory mismatch. Expected: ['google_search_mcp'], Actual: [].",
+              "rubric_verdicts": null,
+              "raw_output": null,
+              "error_message": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "eval_case_index": 1,
+      "response_candidate_results": [
+        {
+          "response_index": 0,
+          "metric_results": {
+            "edd_llm_judge": {
+              "metric_name": "edd_llm_judge",
+              "score": 2.33,
+              "explanation": "Intent Satisfaction: 5/5\nBias Mitigation: 1/5\nTrajectory Quality: 1/5\nExplanation: The user provided a simple, informational diary entry with no explicit request or decision-making context. The agent successfully satisfied the intent (Score: 5) by acknowledging the entry politely and asking how it could assist further. However, because the input was a passive statement rather than a decision-making scenario, the agent did not apply the FORDEC framework or mitigate cognitive biases (Score: 1). Additionally, there were no external facts or market rumors to verify, so the agent did not perform any searches (Score: 1).",
+              "rubric_verdicts": null,
+              "raw_output": null,
+              "error_message": null
+            },
+            "exact_trajectory_evaluation": {
+              "metric_name": "exact_trajectory_evaluation",
+              "score": 5.0,
+              "explanation": "Exact match! Expected: [], Actual: [].",
+              "rubric_verdicts": null,
+              "raw_output": null,
+              "error_message": null
+            }
+          }
+        }
+      ]
+    },
+    {
+      "eval_case_index": 2,
+      "response_candidate_results": [
+        {
+          "response_index": 0,
+          "metric_results": {
+            "edd_llm_judge": {
+              "metric_name": "edd_llm_judge",
+              "score": 3.0,
+              "explanation": "Intent Satisfaction: 5/5\nBias Mitigation: 1/5\nTrajectory Quality: 3/5\nExplanation: The agent successfully satisfied the user's intent by acknowledging the diary entry and offering highly relevant, proactive next steps (Intent Satisfaction: 5). However, there was no application of the FORDEC framework, bias mitigation, or challenging of rushed decisions (Bias Mitigation: 1). The trajectory quality is moderate; the agent did not perform any external searches, but the user's prompt was a simple diary entry that did not contain any factual claims or market rumors requiring external verification (Trajectory Quality: 3).",
+              "rubric_verdicts": null,
+              "raw_output": null,
+              "error_message": null
+            },
+            "exact_trajectory_evaluation": {
+              "metric_name": "exact_trajectory_evaluation",
+              "score": 5.0,
+              "explanation": "Exact match! Expected: [], Actual: [].",
+              "rubric_verdicts": null,
+              "raw_output": null,
+              "error_message": null
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "summary_metrics": [
+    {
+      "metric_name": "edd_llm_judge",
+      "num_cases_total": 3,
+      "num_cases_valid": 3,
+      "num_cases_error": 0,
+      "mean_score": 2.22,
+      "stdev_score": 0.8404165633779477,
+      "pass_rate": null
+    },
+    {
+      "metric_name": "exact_trajectory_evaluation",
+      "num_cases_total": 3,
+      "num_cases_valid": 3,
+      "num_cases_error": 0,
+      "mean_score": 3.6666666666666665,
+      "stdev_score": 2.309401076758503,
+      "pass_rate": null
+    }
+  ],
+  "win_rates": null,
+  "evaluation_dataset": [
+    {
+      "bigquery_source": null,
+      "gcs_source": null,
+      "eval_cases": [
+        {
+          "prompt": {
+            "parts": [
+              {
+                "media_resolution": null,
+                "code_execution_result": null,
+                "executable_code": null,
+                "file_data": null,
+                "function_call": null,
+                "function_response": null,
+                "inline_data": null,
+                "text": "Diary entry: We are hearing rumors of a sudden market tech crash from our advisors. Based on these rumors, I am thinking of postponing our product launch scheduled for next Monday. Let's make the decision now to delay it by three months.",
+                "thought": null,
+                "thought_signature": null,
+                "video_metadata": null,
+                "tool_call": null,
+                "tool_response": null,
+                "part_metadata": null
+              }
+            ],
+            "role": "user"
+          },
+          "responses": [
+            {
+              "response": {
+                "parts": [
+                  {
+                    "media_resolution": null,
+                    "code_execution_result": null,
+                    "executable_code": null,
+                    "file_data": null,
+                    "function_call": null,
+                    "function_response": null,
+                    "inline_data": null,
+                    "text": "Acknowledged. Based on your entry, you have decided to postpone the product launch originally scheduled for next Monday. I will note that the launch has been delayed by three months due to market tech crash rumors.",
+                    "thought": null,
+                    "thought_signature": null,
+                    "video_metadata": null,
+                    "tool_call": null,
+                    "tool_response": null,
+                    "part_metadata": null
+                  }
+                ],
+                "role": "model"
+              }
+            }
+          ],
+          "reference": null,
+          "system_instruction": null,
+          "conversation_history": null,
+          "rubric_groups": null,
+          "eval_case_id": "case_1_rushed_postponement",
+          "intermediate_events": null,
+          "agent_info": null,
+          "agent_data": {
+            "agents": {
+              "root_agent": {
+                "agent_id": "root_agent",
+                "agent_type": "LlmAgent",
+                "description": "",
+                "instruction": "You are a helpful AI assistant designed to provide accurate and useful information.",
+                "tools": [
+                  {
+                    "retrieval": null,
+                    "computer_use": null,
+                    "file_search": null,
+                    "google_search": null,
+                    "google_maps": null,
+                    "code_execution": null,
+                    "enterprise_web_search": null,
+                    "function_declarations": [
+                      {
+                        "description": "Simulates a web search. Use it get information on weather.\n\nArgs:\n    query: A string containing the location to get weather information for.\n\nReturns:\n    A string with the simulated weather information for the queried location.",
+                        "name": "get_weather",
+                        "parameters": {
+                          "additional_properties": null,
+                          "defs": null,
+                          "ref": null,
+                          "any_of": null,
+                          "default": null,
+                          "description": null,
+                          "enum": null,
+                          "example": null,
+                          "format": null,
+                          "items": null,
+                          "max_items": null,
+                          "max_length": null,
+                          "max_properties": null,
+                          "maximum": null,
+                          "min_items": null,
+                          "min_length": null,
+                          "min_properties": null,
+                          "minimum": null,
+                          "nullable": null,
+                          "pattern": null,
+                          "properties": {
+                            "query": {
+                              "additional_properties": null,
+                              "defs": null,
+                              "ref": null,
+                              "any_of": null,
+                              "default": null,
+                              "description": null,
+                              "enum": null,
+                              "example": null,
+                              "format": null,
+                              "items": null,
+                              "max_items": null,
+                              "max_length": null,
+                              "max_properties": null,
+                              "maximum": null,
+                              "min_items": null,
+                              "min_length": null,
+                              "min_properties": null,
+                              "minimum": null,
+                              "nullable": null,
+                              "pattern": null,
+                              "properties": null,
+                              "property_ordering": null,
+                              "required": null,
+                              "title": null,
+                              "type": "STRING"
+                            }
+                          },
+                          "property_ordering": null,
+                          "required": [
+                            "query"
+                          ],
+                          "title": null,
+                          "type": "OBJECT"
+                        },
+                        "parameters_json_schema": null,
+                        "response": null,
+                        "response_json_schema": null,
+                        "behavior": null
+                      }
+                    ],
+                    "google_search_retrieval": null,
+                    "parallel_ai_search": null,
+                    "url_context": null,
+                    "mcp_servers": null
+                  },
+                  {
+                    "retrieval": null,
+                    "computer_use": null,
+                    "file_search": null,
+                    "google_search": null,
+                    "google_maps": null,
+                    "code_execution": null,
+                    "enterprise_web_search": null,
+                    "function_declarations": [
+                      {
+                        "description": "Simulates getting the current time for a city.\n\nArgs:\n    city: The name of the city to get the current time for.\n\nReturns:\n    A string with the current time information.",
+                        "name": "get_current_time",
+                        "parameters": {
+                          "additional_properties": null,
+                          "defs": null,
+                          "ref": null,
+                          "any_of": null,
+                          "default": null,
+                          "description": null,
+                          "enum": null,
+                          "example": null,
+                          "format": null,
+                          "items": null,
+                          "max_items": null,
+                          "max_length": null,
+                          "max_properties": null,
+                          "maximum": null,
+                          "min_items": null,
+                          "min_length": null,
+                          "min_properties": null,
+                          "minimum": null,
+                          "nullable": null,
+                          "pattern": null,
+                          "properties": {
+                            "query": {
+                              "additional_properties": null,
+                              "defs": null,
+                              "ref": null,
+                              "any_of": null,
+                              "default": null,
+                              "description": null,
+                              "enum": null,
+                              "example": null,
+                              "format": null,
+                              "items": null,
+                              "max_items": null,
+                              "max_length": null,
+                              "max_properties": null,
+                              "maximum": null,
+                              "min_items": null,
+                              "min_length": null,
+                              "min_properties": null,
+                              "minimum": null,
+                              "nullable": null,
+                              "pattern": null,
+                              "properties": null,
+                              "property_ordering": null,
+                              "required": null,
+                              "title": null,
+                              "type": "STRING"
+                            }
+                          },
+                          "property_ordering": null,
+                          "required": [
+                            "query"
+                          ],
+                          "title": null,
+                          "type": "OBJECT"
+                        },
+                        "parameters_json_schema": null,
+                        "response": null,
+                        "response_json_schema": null,
+                        "behavior": null
+                      }
+                    ],
+                    "google_search_retrieval": null,
+                    "parallel_ai_search": null,
+                    "url_context": null,
+                    "mcp_servers": null
+                  }
+                ],
+                "sub_agents": []
+              }
+            },
+            "turns": [
+              {
+                "turn_index": 0,
+                "turn_id": "turn_0",
+                "events": [
+                  {
+                    "author": "root_agent",
+                    "content": {
+                      "parts": [
+                        {
+                          "media_resolution": null,
+                          "code_execution_result": null,
+                          "executable_code": null,
+                          "file_data": null,
+                          "function_call": null,
+                          "function_response": null,
+                          "inline_data": null,
+                          "text": "Acknowledged. Based on your entry, you have decided to postpone the product launch originally scheduled for next Monday. I will note that the launch has been delayed by three months due to market tech crash rumors.",
+                          "thought": null,
+                          "thought_signature": null,
+                          "video_metadata": null,
+                          "tool_call": null,
+                          "tool_response": null,
+                          "part_metadata": null
+                        }
+                      ],
+                      "role": "model"
+                    },
+                    "event_time": null,
+                    "state_delta": null,
+                    "active_tools": null
+                  }
+                ]
+              }
+            ]
+          },
+          "user_scenario": null,
+          "expected_tool_calls": [
+            "google_search_mcp"
+          ]
+        },
+        {
+          "prompt": {
+            "parts": [
+              {
+                "media_resolution": null,
+                "code_execution_result": null,
+                "executable_code": null,
+                "file_data": null,
+                "function_call": null,
+                "function_response": null,
+                "inline_data": null,
+                "text": "Diary entry: Today we conducted the annual HR performance reviews for the engineering department. Most teams are meeting expectations, and we discussed standard promotional paths for the top performers.",
+                "thought": null,
+                "thought_signature": null,
+                "video_metadata": null,
+                "tool_call": null,
+                "tool_response": null,
+                "part_metadata": null
+              }
+            ],
+            "role": "user"
+          },
+          "responses": [
+            {
+              "response": {
+                "parts": [
+                  {
+                    "media_resolution": null,
+                    "code_execution_result": null,
+                    "executable_code": null,
+                    "file_data": null,
+                    "function_call": null,
+                    "function_response": null,
+                    "inline_data": null,
+                    "text": "Thank you for sharing that. It sounds like a productive day of reviews. Is there anything specific you would like help with regarding these performance reviews, promotional paths, or managing the engineering department's HR processes?",
+                    "thought": null,
+                    "thought_signature": null,
+                    "video_metadata": null,
+                    "tool_call": null,
+                    "tool_response": null,
+                    "part_metadata": null
+                  }
+                ],
+                "role": "model"
+              }
+            }
+          ],
+          "reference": null,
+          "system_instruction": null,
+          "conversation_history": null,
+          "rubric_groups": null,
+          "eval_case_id": "case_2_hr_review",
+          "intermediate_events": null,
+          "agent_info": null,
+          "agent_data": {
+            "agents": {
+              "root_agent": {
+                "agent_id": "root_agent",
+                "agent_type": "LlmAgent",
+                "description": "",
+                "instruction": "You are a helpful AI assistant designed to provide accurate and useful information.",
+                "tools": [
+                  {
+                    "retrieval": null,
+                    "computer_use": null,
+                    "file_search": null,
+                    "google_search": null,
+                    "google_maps": null,
+                    "code_execution": null,
+                    "enterprise_web_search": null,
+                    "function_declarations": [
+                      {
+                        "description": "Simulates a web search. Use it get information on weather.\n\nArgs:\n    query: A string containing the location to get weather information for.\n\nReturns:\n    A string with the simulated weather information for the queried location.",
+                        "name": "get_weather",
+                        "parameters": {
+                          "additional_properties": null,
+                          "defs": null,
+                          "ref": null,
+                          "any_of": null,
+                          "default": null,
+                          "description": null,
+                          "enum": null,
+                          "example": null,
+                          "format": null,
+                          "items": null,
+                          "max_items": null,
+                          "max_length": null,
+                          "max_properties": null,
+                          "maximum": null,
+                          "min_items": null,
+                          "min_length": null,
+                          "min_properties": null,
+                          "minimum": null,
+                          "nullable": null,
+                          "pattern": null,
+                          "properties": {
+                            "query": {
+                              "additional_properties": null,
+                              "defs": null,
+                              "ref": null,
+                              "any_of": null,
+                              "default": null,
+                              "description": null,
+                              "enum": null,
+                              "example": null,
+                              "format": null,
+                              "items": null,
+                              "max_items": null,
+                              "max_length": null,
+                              "max_properties": null,
+                              "maximum": null,
+                              "min_items": null,
+                              "min_length": null,
+                              "min_properties": null,
+                              "minimum": null,
+                              "nullable": null,
+                              "pattern": null,
+                              "properties": null,
+                              "property_ordering": null,
+                              "required": null,
+                              "title": null,
+                              "type": "STRING"
+                            }
+                          },
+                          "property_ordering": null,
+                          "required": [
+                            "query"
+                          ],
+                          "title": null,
+                          "type": "OBJECT"
+                        },
+                        "parameters_json_schema": null,
+                        "response": null,
+                        "response_json_schema": null,
+                        "behavior": null
+                      }
+                    ],
+                    "google_search_retrieval": null,
+                    "parallel_ai_search": null,
+                    "url_context": null,
+                    "mcp_servers": null
+                  },
+                  {
+                    "retrieval": null,
+                    "computer_use": null,
+                    "file_search": null,
+                    "google_search": null,
+                    "google_maps": null,
+                    "code_execution": null,
+                    "enterprise_web_search": null,
+                    "function_declarations": [
+                      {
+                        "description": "Simulates getting the current time for a city.\n\nArgs:\n    city: The name of the city to get the current time for.\n\nReturns:\n    A string with the current time information.",
+                        "name": "get_current_time",
+                        "parameters": {
+                          "additional_properties": null,
+                          "defs": null,
+                          "ref": null,
+                          "any_of": null,
+                          "default": null,
+                          "description": null,
+                          "enum": null,
+                          "example": null,
+                          "format": null,
+                          "items": null,
+                          "max_items": null,
+                          "max_length": null,
+                          "max_properties": null,
+                          "maximum": null,
+                          "min_items": null,
+                          "min_length": null,
+                          "min_properties": null,
+                          "minimum": null,
+                          "nullable": null,
+                          "pattern": null,
+                          "properties": {
+                            "query": {
+                              "additional_properties": null,
+                              "defs": null,
+                              "ref": null,
+                              "any_of": null,
+                              "default": null,
+                              "description": null,
+                              "enum": null,
+                              "example": null,
+                              "format": null,
+                              "items": null,
+                              "max_items": null,
+                              "max_length": null,
+                              "max_properties": null,
+                              "maximum": null,
+                              "min_items": null,
+                              "min_length": null,
+                              "min_properties": null,
+                              "minimum": null,
+                              "nullable": null,
+                              "pattern": null,
+                              "properties": null,
+                              "property_ordering": null,
+                              "required": null,
+                              "title": null,
+                              "type": "STRING"
+                            }
+                          },
+                          "property_ordering": null,
+                          "required": [
+                            "query"
+                          ],
+                          "title": null,
+                          "type": "OBJECT"
+                        },
+                        "parameters_json_schema": null,
+                        "response": null,
+                        "response_json_schema": null,
+                        "behavior": null
+                      }
+                    ],
+                    "google_search_retrieval": null,
+                    "parallel_ai_search": null,
+                    "url_context": null,
+                    "mcp_servers": null
+                  }
+                ],
+                "sub_agents": []
+              }
+            },
+            "turns": [
+              {
+                "turn_index": 0,
+                "turn_id": "turn_0",
+                "events": [
+                  {
+                    "author": "root_agent",
+                    "content": {
+                      "parts": [
+                        {
+                          "media_resolution": null,
+                          "code_execution_result": null,
+                          "executable_code": null,
+                          "file_data": null,
+                          "function_call": null,
+                          "function_response": null,
+                          "inline_data": null,
+                          "text": "Thank you for sharing that. It sounds like a productive day of reviews. Is there anything specific you would like help with regarding these performance reviews, promotional paths, or managing the engineering department's HR processes?",
+                          "thought": null,
+                          "thought_signature": null,
+                          "video_metadata": null,
+                          "tool_call": null,
+                          "tool_response": null,
+                          "part_metadata": null
+                        }
+                      ],
+                      "role": "model"
+                    },
+                    "event_time": null,
+                    "state_delta": null,
+                    "active_tools": null
+                  }
+                ]
+              }
+            ]
+          },
+          "user_scenario": null,
+          "expected_tool_calls": []
+        },
+        {
+          "prompt": {
+            "parts": [
+              {
+                "media_resolution": null,
+                "code_execution_result": null,
+                "executable_code": null,
+                "file_data": null,
+                "function_call": null,
+                "function_response": null,
+                "inline_data": null,
+                "text": "Diary entry: Ordered new ergonomic chairs for the second-floor office and approved the budget for the upcoming team building dinner in August.",
+                "thought": null,
+                "thought_signature": null,
+                "video_metadata": null,
+                "tool_call": null,
+                "tool_response": null,
+                "part_metadata": null
+              }
+            ],
+            "role": "user"
+          },
+          "responses": [
+            {
+              "response": {
+                "parts": [
+                  {
+                    "media_resolution": null,
+                    "code_execution_result": null,
+                    "executable_code": null,
+                    "file_data": null,
+                    "function_call": null,
+                    "function_response": null,
+                    "inline_data": null,
+                    "text": "It sounds like you had a productive day of administrative and team-focused tasks! Taking care of your team's physical comfort with ergonomic chairs and planning a team-building event are both great ways to boost morale and productivity. \n\nIf you'd like, I can help you with some next steps related to your entry, such as:\n*   **Drafting an announcement** to let the second-floor staff know their new chairs are on the way.\n*   **Brainstorming ideas or venues** for your August team-building dinner.\n*   **Creating a budget tracker or checklist** to keep the dinner planning organized. \n\nJust let me know how I can help!",
+                    "thought": null,
+                    "thought_signature": null,
+                    "video_metadata": null,
+                    "tool_call": null,
+                    "tool_response": null,
+                    "part_metadata": null
+                  }
+                ],
+                "role": "model"
+              }
+            }
+          ],
+          "reference": null,
+          "system_instruction": null,
+          "conversation_history": null,
+          "rubric_groups": null,
+          "eval_case_id": "case_3_office_supplies",
+          "intermediate_events": null,
+          "agent_info": null,
+          "agent_data": {
+            "agents": {
+              "root_agent": {
+                "agent_id": "root_agent",
+                "agent_type": "LlmAgent",
+                "description": "",
+                "instruction": "You are a helpful AI assistant designed to provide accurate and useful information.",
+                "tools": [
+                  {
+                    "retrieval": null,
+                    "computer_use": null,
+                    "file_search": null,
+                    "google_search": null,
+                    "google_maps": null,
+                    "code_execution": null,
+                    "enterprise_web_search": null,
+                    "function_declarations": [
+                      {
+                        "description": "Simulates a web search. Use it get information on weather.\n\nArgs:\n    query: A string containing the location to get weather information for.\n\nReturns:\n    A string with the simulated weather information for the queried location.",
+                        "name": "get_weather",
+                        "parameters": {
+                          "additional_properties": null,
+                          "defs": null,
+                          "ref": null,
+                          "any_of": null,
+                          "default": null,
+                          "description": null,
+                          "enum": null,
+                          "example": null,
+                          "format": null,
+                          "items": null,
+                          "max_items": null,
+                          "max_length": null,
+                          "max_properties": null,
+                          "maximum": null,
+                          "min_items": null,
+                          "min_length": null,
+                          "min_properties": null,
+                          "minimum": null,
+                          "nullable": null,
+                          "pattern": null,
+                          "properties": {
+                            "query": {
+                              "additional_properties": null,
+                              "defs": null,
+                              "ref": null,
+                              "any_of": null,
+                              "default": null,
+                              "description": null,
+                              "enum": null,
+                              "example": null,
+                              "format": null,
+                              "items": null,
+                              "max_items": null,
+                              "max_length": null,
+                              "max_properties": null,
+                              "maximum": null,
+                              "min_items": null,
+                              "min_length": null,
+                              "min_properties": null,
+                              "minimum": null,
+                              "nullable": null,
+                              "pattern": null,
+                              "properties": null,
+                              "property_ordering": null,
+                              "required": null,
+                              "title": null,
+                              "type": "STRING"
+                            }
+                          },
+                          "property_ordering": null,
+                          "required": [
+                            "query"
+                          ],
+                          "title": null,
+                          "type": "OBJECT"
+                        },
+                        "parameters_json_schema": null,
+                        "response": null,
+                        "response_json_schema": null,
+                        "behavior": null
+                      }
+                    ],
+                    "google_search_retrieval": null,
+                    "parallel_ai_search": null,
+                    "url_context": null,
+                    "mcp_servers": null
+                  },
+                  {
+                    "retrieval": null,
+                    "computer_use": null,
+                    "file_search": null,
+                    "google_search": null,
+                    "google_maps": null,
+                    "code_execution": null,
+                    "enterprise_web_search": null,
+                    "function_declarations": [
+                      {
+                        "description": "Simulates getting the current time for a city.\n\nArgs:\n    city: The name of the city to get the current time for.\n\nReturns:\n    A string with the current time information.",
+                        "name": "get_current_time",
+                        "parameters": {
+                          "additional_properties": null,
+                          "defs": null,
+                          "ref": null,
+                          "any_of": null,
+                          "default": null,
+                          "description": null,
+                          "enum": null,
+                          "example": null,
+                          "format": null,
+                          "items": null,
+                          "max_items": null,
+                          "max_length": null,
+                          "max_properties": null,
+                          "maximum": null,
+                          "min_items": null,
+                          "min_length": null,
+                          "min_properties": null,
+                          "minimum": null,
+                          "nullable": null,
+                          "pattern": null,
+                          "properties": {
+                            "query": {
+                              "additional_properties": null,
+                              "defs": null,
+                              "ref": null,
+                              "any_of": null,
+                              "default": null,
+                              "description": null,
+                              "enum": null,
+                              "example": null,
+                              "format": null,
+                              "items": null,
+                              "max_items": null,
+                              "max_length": null,
+                              "max_properties": null,
+                              "maximum": null,
+                              "min_items": null,
+                              "min_length": null,
+                              "min_properties": null,
+                              "minimum": null,
+                              "nullable": null,
+                              "pattern": null,
+                              "properties": null,
+                              "property_ordering": null,
+                              "required": null,
+                              "title": null,
+                              "type": "STRING"
+                            }
+                          },
+                          "property_ordering": null,
+                          "required": [
+                            "query"
+                          ],
+                          "title": null,
+                          "type": "OBJECT"
+                        },
+                        "parameters_json_schema": null,
+                        "response": null,
+                        "response_json_schema": null,
+                        "behavior": null
+                      }
+                    ],
+                    "google_search_retrieval": null,
+                    "parallel_ai_search": null,
+                    "url_context": null,
+                    "mcp_servers": null
+                  }
+                ],
+                "sub_agents": []
+              }
+            },
+            "turns": [
+              {
+                "turn_index": 0,
+                "turn_id": "turn_0",
+                "events": [
+                  {
+                    "author": "root_agent",
+                    "content": {
+                      "parts": [
+                        {
+                          "media_resolution": null,
+                          "code_execution_result": null,
+                          "executable_code": null,
+                          "file_data": null,
+                          "function_call": null,
+                          "function_response": null,
+                          "inline_data": null,
+                          "text": "It sounds like you had a productive day of administrative and team-focused tasks! Taking care of your team's physical comfort with ergonomic chairs and planning a team-building event are both great ways to boost morale and productivity. \n\nIf you'd like, I can help you with some next steps related to your entry, such as:\n*   **Drafting an announcement** to let the second-floor staff know their new chairs are on the way.\n*   **Brainstorming ideas or venues** for your August team-building dinner.\n*   **Creating a budget tracker or checklist** to keep the dinner planning organized. \n\nJust let me know how I can help!",
+                          "thought": null,
+                          "thought_signature": null,
+                          "video_metadata": null,
+                          "tool_call": null,
+                          "tool_response": null,
+                          "part_metadata": null
+                        }
+                      ],
+                      "role": "model"
+                    },
+                    "event_time": null,
+                    "state_delta": null,
+                    "active_tools": null
+                  }
+                ]
+              }
+            ]
+          },
+          "user_scenario": null,
+          "expected_tool_calls": []
+        }
+      ],
+      "eval_dataset_df": null,
+      "candidate_name": null
+    }
+  ],
+  "metadata": {
+    "candidate_names": [
+      "candidate_1"
+    ],
+    "dataset_name": null,
+    "dataset_id": null,
+    "creation_timestamp": "2026-07-07T06:36:48.735982Z",
+    "dataset": [
+      {
+        "prompt_display_text": "Diary entry: We are hearing rumors of a sudden market tech crash from our advisors. Based on these rumors, I am thinking of postponing our product launch scheduled for next Monday. Let's make the decision now to delay it by three months.",
+        "prompt_raw_json": "{\n  \"parts\": [\n    {\n      \"text\": \"Diary entry: We are hearing rumors of a sudden market tech crash from our advisors. Based on these rumors, I am thinking of postponing our product launch scheduled for next Monday. Let's make the decision now to delay it by three months.\"\n    }\n  ],\n  \"role\": \"user\"\n}",
+        "reference": "",
+        "reference_raw_json": "",
+        "response_display_text": "Acknowledged. Based on your entry, you have decided to postpone the product launch originally scheduled for next Monday. I will note that the launch has been delayed by three months due to market tech crash rumors.",
+        "response_raw_json": "{\n  \"parts\": [\n    {\n      \"text\": \"Acknowledged. Based on your entry, you have decided to postpone the product launch originally scheduled for next Monday. I will note that the launch has been delayed by three months due to market tech crash rumors.\"\n    }\n  ],\n  \"role\": \"model\"\n}",
+        "intermediate_events": null,
+        "agent_data": "{\"agents\": {\"root_agent\": {\"agent_id\": \"root_agent\", \"agent_type\": \"LlmAgent\", \"description\": \"\", \"instruction\": \"You are a helpful AI assistant designed to provide accurate and useful information.\", \"tools\": [{\"function_declarations\": [{\"description\": \"Simulates a web search. Use it get information on weather.\\n\\nArgs:\\n    query: A string containing the location to get weather information for.\\n\\nReturns:\\n    A string with the simulated weather information for the queried location.\", \"name\": \"get_weather\", \"parameters\": {\"properties\": {\"query\": {\"type\": \"STRING\"}}, \"required\": [\"query\"], \"type\": \"OBJECT\"}}]}, {\"function_declarations\": [{\"description\": \"Simulates getting the current time for a city.\\n\\nArgs:\\n    city: The name of the city to get the current time for.\\n\\nReturns:\\n    A string with the current time information.\", \"name\": \"get_current_time\", \"parameters\": {\"properties\": {\"query\": {\"type\": \"STRING\"}}, \"required\": [\"query\"], \"type\": \"OBJECT\"}}]}], \"sub_agents\": []}}, \"turns\": [{\"turn_index\": 0, \"turn_id\": \"turn_0\", \"events\": [{\"author\": \"root_agent\", \"content\": {\"parts\": [{\"text\": \"Acknowledged. Based on your entry, you have decided to postpone the product launch originally scheduled for next Monday. I will note that the launch has been delayed by three months due to market tech crash rumors.\"}], \"role\": \"model\"}}]}]}"
+      },
+      {
+        "prompt_display_text": "Diary entry: Today we conducted the annual HR performance reviews for the engineering department. Most teams are meeting expectations, and we discussed standard promotional paths for the top performers.",
+        "prompt_raw_json": "{\n  \"parts\": [\n    {\n      \"text\": \"Diary entry: Today we conducted the annual HR performance reviews for the engineering department. Most teams are meeting expectations, and we discussed standard promotional paths for the top performers.\"\n    }\n  ],\n  \"role\": \"user\"\n}",
+        "reference": "",
+        "reference_raw_json": "",
+        "response_display_text": "Thank you for sharing that. It sounds like a productive day of reviews. Is there anything specific you would like help with regarding these performance reviews, promotional paths, or managing the engineering department's HR processes?",
+        "response_raw_json": "{\n  \"parts\": [\n    {\n      \"text\": \"Thank you for sharing that. It sounds like a productive day of reviews. Is there anything specific you would like help with regarding these performance reviews, promotional paths, or managing the engineering department's HR processes?\"\n    }\n  ],\n  \"role\": \"model\"\n}",
+        "intermediate_events": null,
+        "agent_data": "{\"agents\": {\"root_agent\": {\"agent_id\": \"root_agent\", \"agent_type\": \"LlmAgent\", \"description\": \"\", \"instruction\": \"You are a helpful AI assistant designed to provide accurate and useful information.\", \"tools\": [{\"function_declarations\": [{\"description\": \"Simulates a web search. Use it get information on weather.\\n\\nArgs:\\n    query: A string containing the location to get weather information for.\\n\\nReturns:\\n    A string with the simulated weather information for the queried location.\", \"name\": \"get_weather\", \"parameters\": {\"properties\": {\"query\": {\"type\": \"STRING\"}}, \"required\": [\"query\"], \"type\": \"OBJECT\"}}]}, {\"function_declarations\": [{\"description\": \"Simulates getting the current time for a city.\\n\\nArgs:\\n    city: The name of the city to get the current time for.\\n\\nReturns:\\n    A string with the current time information.\", \"name\": \"get_current_time\", \"parameters\": {\"properties\": {\"query\": {\"type\": \"STRING\"}}, \"required\": [\"query\"], \"type\": \"OBJECT\"}}]}], \"sub_agents\": []}}, \"turns\": [{\"turn_index\": 0, \"turn_id\": \"turn_0\", \"events\": [{\"author\": \"root_agent\", \"content\": {\"parts\": [{\"text\": \"Thank you for sharing that. It sounds like a productive day of reviews. Is there anything specific you would like help with regarding these performance reviews, promotional paths, or managing the engineering department's HR processes?\"}], \"role\": \"model\"}}]}]}"
+      },
+      {
+        "prompt_display_text": "Diary entry: Ordered new ergonomic chairs for the second-floor office and approved the budget for the upcoming team building dinner in August.",
+        "prompt_raw_json": "{\n  \"parts\": [\n    {\n      \"text\": \"Diary entry: Ordered new ergonomic chairs for the second-floor office and approved the budget for the upcoming team building dinner in August.\"\n    }\n  ],\n  \"role\": \"user\"\n}",
+        "reference": "",
+        "reference_raw_json": "",
+        "response_display_text": "It sounds like you had a productive day of administrative and team-focused tasks! Taking care of your team's physical comfort with ergonomic chairs and planning a team-building event are both great ways to boost morale and productivity. \n\nIf you'd like, I can help you with some next steps related to your entry, such as:\n*   **Drafting an announcement** to let the second-floor staff know their new chairs are on the way.\n*   **Brainstorming ideas or venues** for your August team-building dinner.\n*   **Creating a budget tracker or checklist** to keep the dinner planning organized. \n\nJust let me know how I can help!",
+        "response_raw_json": "{\n  \"parts\": [\n    {\n      \"text\": \"It sounds like you had a productive day of administrative and team-focused tasks! Taking care of your team's physical comfort with ergonomic chairs and planning a team-building event are both great ways to boost morale and productivity. \\n\\nIf you'd like, I can help you with some next steps related to your entry, such as:\\n*   **Drafting an announcement** to let the second-floor staff know their new chairs are on the way.\\n*   **Brainstorming ideas or venues** for your August team-building dinner.\\n*   **Creating a budget tracker or checklist** to keep the dinner planning organized. \\n\\nJust let me know how I can help!\"\n    }\n  ],\n  \"role\": \"model\"\n}",
+        "intermediate_events": null,
+        "agent_data": "{\"agents\": {\"root_agent\": {\"agent_id\": \"root_agent\", \"agent_type\": \"LlmAgent\", \"description\": \"\", \"instruction\": \"You are a helpful AI assistant designed to provide accurate and useful information.\", \"tools\": [{\"function_declarations\": [{\"description\": \"Simulates a web search. Use it get information on weather.\\n\\nArgs:\\n    query: A string containing the location to get weather information for.\\n\\nReturns:\\n    A string with the simulated weather information for the queried location.\", \"name\": \"get_weather\", \"parameters\": {\"properties\": {\"query\": {\"type\": \"STRING\"}}, \"required\": [\"query\"], \"type\": \"OBJECT\"}}]}, {\"function_declarations\": [{\"description\": \"Simulates getting the current time for a city.\\n\\nArgs:\\n    city: The name of the city to get the current time for.\\n\\nReturns:\\n    A string with the current time information.\", \"name\": \"get_current_time\", \"parameters\": {\"properties\": {\"query\": {\"type\": \"STRING\"}}, \"required\": [\"query\"], \"type\": \"OBJECT\"}}]}], \"sub_agents\": []}}, \"turns\": [{\"turn_index\": 0, \"turn_id\": \"turn_0\", \"events\": [{\"author\": \"root_agent\", \"content\": {\"parts\": [{\"text\": \"It sounds like you had a productive day of administrative and team-focused tasks! Taking care of your team's physical comfort with ergonomic chairs and planning a team-building event are both great ways to boost morale and productivity. \\n\\nIf you'd like, I can help you with some next steps related to your entry, such as:\\n*   **Drafting an announcement** to let the second-floor staff know their new chairs are on the way.\\n*   **Brainstorming ideas or venues** for your August team-building dinner.\\n*   **Creating a budget tracker or checklist** to keep the dinner planning organized. \\n\\nJust let me know how I can help!\"}], \"role\": \"model\"}}]}]}"
+      }
+    ]
+  },
+  "agent_info": null
+}

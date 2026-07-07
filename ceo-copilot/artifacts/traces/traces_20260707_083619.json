@@ -1,0 +1,288 @@
+{
+  "eval_cases": [
+    {
+      "prompt": {
+        "parts": [
+          {
+            "text": "Diary entry: We are hearing rumors of a sudden market tech crash from our advisors. Based on these rumors, I am thinking of postponing our product launch scheduled for next Monday. Let's make the decision now to delay it by three months."
+          }
+        ],
+        "role": "user"
+      },
+      "responses": [
+        {
+          "response": {
+            "parts": [
+              {
+                "text": "Acknowledged. Based on your entry, you have decided to postpone the product launch originally scheduled for next Monday. I will note that the launch has been delayed by three months due to market tech crash rumors."
+              }
+            ],
+            "role": "model"
+          }
+        }
+      ],
+      "eval_case_id": "case_1_rushed_postponement",
+      "agent_data": {
+        "agents": {
+          "root_agent": {
+            "agent_id": "root_agent",
+            "agent_type": "LlmAgent",
+            "description": "",
+            "instruction": "You are a helpful AI assistant designed to provide accurate and useful information.",
+            "tools": [
+              {
+                "function_declarations": [
+                  {
+                    "description": "Simulates a web search. Use it get information on weather.\n\nArgs:\n    query: A string containing the location to get weather information for.\n\nReturns:\n    A string with the simulated weather information for the queried location.",
+                    "name": "get_weather",
+                    "parameters": {
+                      "properties": {
+                        "query": {
+                          "type": "STRING"
+                        }
+                      },
+                      "required": [
+                        "query"
+                      ],
+                      "type": "OBJECT"
+                    }
+                  }
+                ]
+              },
+              {
+                "function_declarations": [
+                  {
+                    "description": "Simulates getting the current time for a city.\n\nArgs:\n    city: The name of the city to get the current time for.\n\nReturns:\n    A string with the current time information.",
+                    "name": "get_current_time",
+                    "parameters": {
+                      "properties": {
+                        "query": {
+                          "type": "STRING"
+                        }
+                      },
+                      "required": [
+                        "query"
+                      ],
+                      "type": "OBJECT"
+                    }
+                  }
+                ]
+              }
+            ],
+            "sub_agents": []
+          }
+        },
+        "turns": [
+          {
+            "turn_index": 0,
+            "turn_id": "turn_0",
+            "events": [
+              {
+                "author": "root_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "text": "Acknowledged. Based on your entry, you have decided to postpone the product launch originally scheduled for next Monday. I will note that the launch has been delayed by three months due to market tech crash rumors."
+                    }
+                  ],
+                  "role": "model"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "expected_tool_calls": [
+        "google_search_mcp"
+      ]
+    },
+    {
+      "prompt": {
+        "parts": [
+          {
+            "text": "Diary entry: Today we conducted the annual HR performance reviews for the engineering department. Most teams are meeting expectations, and we discussed standard promotional paths for the top performers."
+          }
+        ],
+        "role": "user"
+      },
+      "responses": [
+        {
+          "response": {
+            "parts": [
+              {
+                "text": "Thank you for sharing that. It sounds like a productive day of reviews. Is there anything specific you would like help with regarding these performance reviews, promotional paths, or managing the engineering department's HR processes?"
+              }
+            ],
+            "role": "model"
+          }
+        }
+      ],
+      "eval_case_id": "case_2_hr_review",
+      "agent_data": {
+        "agents": {
+          "root_agent": {
+            "agent_id": "root_agent",
+            "agent_type": "LlmAgent",
+            "description": "",
+            "instruction": "You are a helpful AI assistant designed to provide accurate and useful information.",
+            "tools": [
+              {
+                "function_declarations": [
+                  {
+                    "description": "Simulates a web search. Use it get information on weather.\n\nArgs:\n    query: A string containing the location to get weather information for.\n\nReturns:\n    A string with the simulated weather information for the queried location.",
+                    "name": "get_weather",
+                    "parameters": {
+                      "properties": {
+                        "query": {
+                          "type": "STRING"
+                        }
+                      },
+                      "required": [
+                        "query"
+                      ],
+                      "type": "OBJECT"
+                    }
+                  }
+                ]
+              },
+              {
+                "function_declarations": [
+                  {
+                    "description": "Simulates getting the current time for a city.\n\nArgs:\n    city: The name of the city to get the current time for.\n\nReturns:\n    A string with the current time information.",
+                    "name": "get_current_time",
+                    "parameters": {
+                      "properties": {
+                        "query": {
+                          "type": "STRING"
+                        }
+                      },
+                      "required": [
+                        "query"
+                      ],
+                      "type": "OBJECT"
+                    }
+                  }
+                ]
+              }
+            ],
+            "sub_agents": []
+          }
+        },
+        "turns": [
+          {
+            "turn_index": 0,
+            "turn_id": "turn_0",
+            "events": [
+              {
+                "author": "root_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "text": "Thank you for sharing that. It sounds like a productive day of reviews. Is there anything specific you would like help with regarding these performance reviews, promotional paths, or managing the engineering department's HR processes?"
+                    }
+                  ],
+                  "role": "model"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "expected_tool_calls": []
+    },
+    {
+      "prompt": {
+        "parts": [
+          {
+            "text": "Diary entry: Ordered new ergonomic chairs for the second-floor office and approved the budget for the upcoming team building dinner in August."
+          }
+        ],
+        "role": "user"
+      },
+      "responses": [
+        {
+          "response": {
+            "parts": [
+              {
+                "text": "It sounds like you had a productive day of administrative and team-focused tasks! Taking care of your team's physical comfort with ergonomic chairs and planning a team-building event are both great ways to boost morale and productivity. \n\nIf you'd like, I can help you with some next steps related to your entry, such as:\n*   **Drafting an announcement** to let the second-floor staff know their new chairs are on the way.\n*   **Brainstorming ideas or venues** for your August team-building dinner.\n*   **Creating a budget tracker or checklist** to keep the dinner planning organized. \n\nJust let me know how I can help!"
+              }
+            ],
+            "role": "model"
+          }
+        }
+      ],
+      "eval_case_id": "case_3_office_supplies",
+      "agent_data": {
+        "agents": {
+          "root_agent": {
+            "agent_id": "root_agent",
+            "agent_type": "LlmAgent",
+            "description": "",
+            "instruction": "You are a helpful AI assistant designed to provide accurate and useful information.",
+            "tools": [
+              {
+                "function_declarations": [
+                  {
+                    "description": "Simulates a web search. Use it get information on weather.\n\nArgs:\n    query: A string containing the location to get weather information for.\n\nReturns:\n    A string with the simulated weather information for the queried location.",
+                    "name": "get_weather",
+                    "parameters": {
+                      "properties": {
+                        "query": {
+                          "type": "STRING"
+                        }
+                      },
+                      "required": [
+                        "query"
+                      ],
+                      "type": "OBJECT"
+                    }
+                  }
+                ]
+              },
+              {
+                "function_declarations": [
+                  {
+                    "description": "Simulates getting the current time for a city.\n\nArgs:\n    city: The name of the city to get the current time for.\n\nReturns:\n    A string with the current time information.",
+                    "name": "get_current_time",
+                    "parameters": {
+                      "properties": {
+                        "query": {
+                          "type": "STRING"
+                        }
+                      },
+                      "required": [
+                        "query"
+                      ],
+                      "type": "OBJECT"
+                    }
+                  }
+                ]
+              }
+            ],
+            "sub_agents": []
+          }
+        },
+        "turns": [
+          {
+            "turn_index": 0,
+            "turn_id": "turn_0",
+            "events": [
+              {
+                "author": "root_agent",
+                "content": {
+                  "parts": [
+                    {
+                      "text": "It sounds like you had a productive day of administrative and team-focused tasks! Taking care of your team's physical comfort with ergonomic chairs and planning a team-building event are both great ways to boost morale and productivity. \n\nIf you'd like, I can help you with some next steps related to your entry, such as:\n*   **Drafting an announcement** to let the second-floor staff know their new chairs are on the way.\n*   **Brainstorming ideas or venues** for your August team-building dinner.\n*   **Creating a budget tracker or checklist** to keep the dinner planning organized. \n\nJust let me know how I can help!"
+                    }
+                  ],
+                  "role": "model"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "expected_tool_calls": []
+    }
+  ]
+}
